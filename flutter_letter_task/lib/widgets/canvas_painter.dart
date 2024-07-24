@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
@@ -16,13 +15,13 @@ class DrawPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint guidePaint = Paint()
-      ..color = Color(0xff6EC5A1).withOpacity(0.5) // Faded color for guide
+      ..color = const Color(0xff6EC5A1).withOpacity(0.5) // Faded color for guide
       ..strokeCap = StrokeCap.round
       ..strokeWidth = strokeWidth - 5
       ..style = PaintingStyle.stroke;
 
     Paint userPaint = Paint()
-      ..color = Color(0xff6EC5A1)
+      ..color = const Color(0xff6EC5A1)
       ..strokeCap = StrokeCap.round
       ..strokeWidth = strokeWidth;
 
@@ -50,7 +49,7 @@ class DrawPainter extends CustomPainter {
         if (j == strokeIndex) {
           // Draw the circle
           canvas.drawCircle(
-            stroke[i] + Offset(-0, -0), // Center the circle around the text
+            stroke[i] + const Offset(-0, -0), // Center the circle around the text
             10, // Radius of the circle
             circlePaint,
           );
@@ -70,7 +69,7 @@ class DrawPainter extends CustomPainter {
           textDirection: TextDirection.ltr,
         );
         textPainter.layout();
-        textPainter.paint(canvas, stroke[i] + Offset(-5, -10));
+        textPainter.paint(canvas, stroke[i] + const Offset(-5, -10));
       }
     }
 

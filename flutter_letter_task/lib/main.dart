@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_letter_task/widgets/canvas_widget.dart';
@@ -56,7 +55,7 @@ class _DrawingScreenState extends State<DrawingScreen> {
             ),
           ),
           Positioned(
-            top: 20,
+            top: -30,
             left: 0,
             right: 0,
             child: SvgPicture.asset(
@@ -66,7 +65,7 @@ class _DrawingScreenState extends State<DrawingScreen> {
             ),
           ),
           Positioned(
-            top: 60,
+            top: 80,
             left: 30,
             child: SvgPicture.asset(
               'assets/trace2.svg',

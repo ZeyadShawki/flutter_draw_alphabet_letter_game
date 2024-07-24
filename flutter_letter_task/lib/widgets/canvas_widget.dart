@@ -5,6 +5,7 @@ import 'package:flutter_letter_task/cubit/letter_cubit.dart';
 import 'package:flutter_letter_task/cubit/letter_state.dart';
 import 'package:flutter_letter_task/widgets/canvas_painter.dart';
 import 'package:flutter_svg/svg.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CanvasWidget extends StatefulWidget {
@@ -27,7 +28,7 @@ class _CanvasWidgetState extends State<CanvasWidget> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 100,
               ),
               Container(
@@ -68,17 +69,17 @@ class _CanvasWidgetState extends State<CanvasWidget> {
     });
 
     // Check if exactly two pointers are active
-    if (activePointers.length == 2) {
+    // if (activePointers.length == 2) {
       myCubit.startDrawing();
-    }
+    // }
   }
 
   // Handle pointer move event
   void _handlePointerMove(PointerMoveEvent event) {
     // Check if exactly two pointers are active
-    if (activePointers.length == 2) {
+    // if (activePointers.length == 2) {
       myCubit.updateDrawing(event.localPosition);
-    }
+    // }
   }
 
   // Handle pointer up event
@@ -109,7 +110,7 @@ class _CanvasWidgetState extends State<CanvasWidget> {
                   'assets/arrow.svg',
                   width: 20,
                   height: 20,
-                  color: Colors.white,
+                  // ignore: deprecated_member_use
                 ),
               ),
             ),

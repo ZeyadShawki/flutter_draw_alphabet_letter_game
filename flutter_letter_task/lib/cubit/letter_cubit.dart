@@ -2,6 +2,7 @@
 import 'dart:math';
 import 'dart:ui';
 
+// ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
 import 'package:flutter_letter_task/cubit/letter_state.dart';
 import 'package:flutter_letter_task/main.dart';
@@ -11,8 +12,8 @@ class DrawingCubit extends Cubit<DrawingState> {
         tDrawing = CharacterDrawing(
       'T',
       [
-        [Offset(150, 20), Offset(150, 200)], // Vertical line
-        [Offset(110, 80), Offset(190, 80)], // Horizontal line
+        [const Offset(150, 20), const Offset(150, 200)], // Vertical line
+        [const Offset(110, 80), const Offset(190, 80)], // Horizontal line
       ],
     );
   }
@@ -113,24 +114,18 @@ class DrawingCubit extends Cubit<DrawingState> {
     // print(end.toString());
     // print(point.toString());
     // Handle special cases where start and end points are the same
-    print('wwww' + userStroke.toString() + 'rrrr' + startStroke.dx.toString());
     if (userStroke.isEmpty) {
       // Handle horizontal line segments
       if (startStroke.dy == endStroke.dy) {
         // ignore: unused_local_variable
         final endDy = endStroke.dy + 10;
 
-        print('ssss');
-        print(point.dx);
-        print(startStroke.dx);
 
         return point.dx >= startStroke.dx && point.dx <= (startStroke.dx + 5);
       }
 
 // vertical
       else if (startStroke.dx == endStroke.dx) {
-        final startdx = startStroke.dx - 10;
-        final endDx = endStroke.dx + 10;
 
         return point.dy >= startStroke.dy && point.dy <= (startStroke.dy + 5);
       }
@@ -138,14 +133,12 @@ class DrawingCubit extends Cubit<DrawingState> {
       final lastStroke = userStroke.last;
 
       if (startStroke.dy == endStroke.dy) {
-        final startdy = endStroke.dy - 10;
 
         return point.dx >= lastStroke!.dx;
       }
 
 // vertical
       else if (startStroke.dx == endStroke.dx) {
-        final endDx = endStroke.dx + 10;
 
         return point.dy >= lastStroke!.dy;
       }
